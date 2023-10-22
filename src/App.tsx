@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {arraySum, arrayFilter, arrayMap} from "./utils";
 
 function App() {
+    const array = [1, 2, 3, 4, 5];
+    const strArray = ['one', 'two', 'three'];
+    const sum = arraySum(array);
+    const filter = arrayFilter(array, item => item % 2 === 0);
+    const map = arrayMap(array, item => item * 2);
+    const mapStr = arrayMap(strArray, item => item + '-potato');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <p>{sum}</p>
+        <p>{filter.toString()}</p>
+        <p>{map.toString()}</p>
+        <p>{mapStr.toString()}</p>
     </div>
   );
 }
