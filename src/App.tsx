@@ -1,21 +1,28 @@
 import React from 'react';
 import './App.css';
-import {arraySum, arrayFilter, arrayMap} from "./utils";
+import {arraySum, arrayFilter, getUserNames, userType} from "./utils";
 
 function App() {
     const array = [1, 2, 3, 4, 5];
-    const strArray = ['one', 'two', 'three'];
+    const usersArray = [
+        {
+            name: "Peter",
+            age: 20,
+        },
+        {
+            name: "Mary",
+            age: 30,
+        }
+    ]
     const sum = arraySum(array);
     const filter = arrayFilter(array, item => item % 2 === 0);
-    const map = arrayMap(array, item => item * 2);
-    const mapStr = arrayMap(strArray, item => item + '-potato');
+    const userNamesArray = getUserNames(usersArray);
 
-  return (
+    return (
     <div className="App">
         <p>{sum}</p>
         <p>{filter.toString()}</p>
-        <p>{map.toString()}</p>
-        <p>{mapStr.toString()}</p>
+        <p>{userNamesArray.toString()}</p>
     </div>
   );
 }
