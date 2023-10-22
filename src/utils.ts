@@ -8,12 +8,13 @@ export const arrayFilter = (arr: number[], condition: (item: number) => boolean)
     return arr.filter(item => condition(item));
 }
 
-export type userType = {
-    name: string,
-    age: number,
+export type UserType = {
+    name: string;
+    surname?: string;
+    age: number | string;
 }
 
 // Функция для преобразования элементов массива
-export const getUserNames = (arr: userType[]): string[] => {
+export const getUserNames = (arr: UserType[]): string[] => {
     return  arr.map(item => item.name);
 }
